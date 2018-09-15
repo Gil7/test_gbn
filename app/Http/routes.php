@@ -25,7 +25,17 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
+Route::group(['middleware' => ['web']], function () {
+    Route::auth();
+});
+
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::resource('categories', 'CategoryController');
+    Route::resource('books', 'BookController');
+    Route::resource('users', 'UserController');
 });
+
+
+Route::get('/home', 'HomeController@index');
+

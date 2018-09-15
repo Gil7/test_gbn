@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Helpers\AlertHelper;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('alert', function ($app) {
+            return new AlertHelper($app['session'], $app['view']);
+        });
     }
 }
