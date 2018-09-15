@@ -40,8 +40,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
-            'description' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
+            'name' => 'required|string|max:255|regex:/^[\pL\s\-]+$/u',
+            'description' => 'required|string|max:255|regex:/^[\pL\s\-]+$/u',
         ]);
         if ($validator->fails()) {
             return redirect()->back()

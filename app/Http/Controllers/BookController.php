@@ -43,8 +43,8 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
-            'author' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
+            'name' => 'required|string|max:255|regex:/^[a-zA-Z +$/u',
+            'author' => 'required|string|max:255|regex:/^[\pL\s\-]+$/u',
             'categories' => 'required',
             'published' => 'required|date'
         ]);
@@ -107,8 +107,8 @@ class BookController extends Controller
     {
         
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
-            'author' => 'required|string|max:255|regex:/^[a-zA-Z]+$/u',
+            'name' => 'required|string|max:255|regex:/^[\pL\s\-]+$/u',
+            'author' => 'required|string|max:255|regex:/^[\pL\s\-]+$/u',
             'categories' => 'required',
             'published' => 'required|date'
         ]);

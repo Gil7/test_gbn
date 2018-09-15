@@ -17,7 +17,7 @@
 			<input type="text" value="{{$category->description}}" name="description" required class="form-control">
 		</div>
 		<button type="submit" class="btn btn-primary">Save <i class="fa fa-check"></i></button>
-		<a href="{{URL::previous()}}" class="btn btn-danger">Cancel <i class="fa fa-times"></i></a>
+		<a href="{{url('categories')}}" class="btn btn-danger">Cancel <i class="fa fa-times"></i></a>
 	<form>
 
 @endsection
