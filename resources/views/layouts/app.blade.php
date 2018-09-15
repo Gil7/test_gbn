@@ -17,6 +17,8 @@
     
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
     <style>
         body {
             font-family: 'Lato';
@@ -91,7 +93,15 @@
         @if(session()->has('alert'))
             {!! Alertas::render() !!}
         @endif
+        
 
+        
+
+        <ul class="nav nav-tabs">
+          <li role="presentation" ><a href="{{url('books')}}">Books</a></li>
+          <li role="presentation"><a href="{{url('categories')}}">Categories</a></li>
+          <li role="presentation"><a href="{{url('users')}}">Users</a></li>
+        </ul>
         @yield('content')    
     </div>
     
@@ -101,6 +111,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="{{asset('js/app.js')}}"></script>
     @yield('scripts')
+
 </body>
 </html>

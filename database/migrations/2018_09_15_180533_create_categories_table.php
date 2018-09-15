@@ -20,9 +20,9 @@ class CreateCategoriesTable extends Migration
         });
         Schema::create('books_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('book_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('book_id')->references('id')->on('books');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });

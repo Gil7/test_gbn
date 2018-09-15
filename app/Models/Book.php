@@ -11,10 +11,10 @@ class Book extends Model
     	'name','author','category','published',
     	'user_id'
     ];
-    public function user(){
-    	return $this->belongsTo(User::class, 'user_id');
+    public function current_user(){
+    	return $this->belongsTo('App\User', 'user_id');
     }
     public function categories(){
-    	return $this->belongsToMany(Category::class,'books_categories','category_id','book_id');
+    	return $this->belongsToMany(Category::class,'books_categories','book_id','category_id');
     }
 }
